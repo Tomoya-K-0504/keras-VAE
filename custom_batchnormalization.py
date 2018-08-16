@@ -1,5 +1,5 @@
 from keras.engine import Layer, InputSpec
-from keras import initializations
+from keras import initializers 
 from keras import backend as K
 
 
@@ -59,8 +59,8 @@ class CustomBatchNormalization(Layer):
     def __init__(self, epsilon=1e-6, mode=0, axis=-1, momentum=0.99,
                  weights=None, beta_init='zero', gamma_init='one', **kwargs):
         self.supports_masking = True
-        self.beta_init = initializations.get(beta_init)
-        self.gamma_init = initializations.get(gamma_init)
+        self.beta_init = initializers.get(beta_init)
+        self.gamma_init = initializers.get(gamma_init)
         self.epsilon = epsilon
         self.mode = mode
         self.axis = axis
